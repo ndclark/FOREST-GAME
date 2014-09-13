@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 8567eb2c47aef412eb5d41220c223a07
+guid: 022287f9f6f73450aa4681eb77ce0377
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GJ1_CharacterWalkSide_Right_Object_L
+    21300000: GJ1_7_CharacterWalkSide_Left_R
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -2
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
