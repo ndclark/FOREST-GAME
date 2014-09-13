@@ -13,8 +13,9 @@ public class PlayerInteractions : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update () 
+	{
+
 	}
 
 	void OnCollisionEnter2D(Collision2D other) 
