@@ -33,13 +33,17 @@ public class CharMove : MonoBehaviour {
 			targetDirection += Vector2.right*horzSpeed;
 		}
 		else if (Input.GetKey (KeyCode.W))
+		{
+			anim.SetBool("WalkF",true);
 			targetDirection += Vector2.up *vertSpeed;
+		}
 		else if (Input.GetKey (KeyCode.S))
 			targetDirection += -Vector2.up * vertSpeed;
 		else
 		{
 			anim.SetBool("WalkL",false);
 			anim.SetBool("WalkR",false);
+			anim.SetBool("WalkF",false);
 		}
 	
 
