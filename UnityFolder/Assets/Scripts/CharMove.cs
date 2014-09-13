@@ -71,7 +71,7 @@ public class CharMove : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other) 
 	{
 
-		if (other.gameObject.tag == "Item")
+		if (other.gameObject.tag == "Water")
 		{
 			Debug.Log("hit");
 			hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
