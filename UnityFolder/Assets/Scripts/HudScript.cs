@@ -17,7 +17,7 @@ public class HudScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		Player_Water = Player_Water - Health_Fall;
+		Player_Water = Player_Water - Water_Fall;
 		Player_Food = Player_Food - Water_Fall;
 
 		if (Player_Water <= 0)
@@ -32,6 +32,9 @@ public class HudScript : MonoBehaviour {
 			if(Player_Water <= 0)
 			Player_Health = Player_Health - Health_Fall;
 		}
+
+		if (Player_Health <= 0)
+			Player_Health =0;
 	
 	}
 
