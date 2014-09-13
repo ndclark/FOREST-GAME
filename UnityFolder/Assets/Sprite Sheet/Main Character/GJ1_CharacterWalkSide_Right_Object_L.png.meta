@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: afb6c78b4c2cd4463b3a26209a907dc2
+guid: 8567eb2c47aef412eb5d41220c223a07
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GJ1_CharacterStill_1
-    21300002: GJ1_CharacterStill_2
+    21300000: GJ1_CharacterWalkSide_Right_Object_L
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -23,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

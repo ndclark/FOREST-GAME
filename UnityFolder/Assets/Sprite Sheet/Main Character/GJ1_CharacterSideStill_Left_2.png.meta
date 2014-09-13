@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: afb6c78b4c2cd4463b3a26209a907dc2
+guid: 7ee5664559a044ab7acb78442cf47928
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GJ1_CharacterStill_1
-    21300002: GJ1_CharacterStill_2
+    21300000: GJ1_CharacterSideStill_Left_1
+    21300002: GJ1_CharacterSideStill_Left_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
