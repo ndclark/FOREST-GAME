@@ -7,7 +7,7 @@ public class HudScript : MonoBehaviour {
 	public float Player_Health = 100f;
 	public float Player_Water = 100f;
 	public float Player_Food = 100f;
-	public float Rocks_Carried = 0;
+	public int Rocks_Carried = 0;
 
 	public float Health_Fall;
 	public float Water_Fall;
@@ -39,6 +39,8 @@ public class HudScript : MonoBehaviour {
 			Player_Food = 0;
 			if(Player_Water <= 0)
 			Player_Health = Player_Health - Health_Fall;
+			else
+				Player_Health = Player_Health - Food_Fall;
 		}
 
 		if (Player_Health <= 0)
@@ -48,6 +50,7 @@ public class HudScript : MonoBehaviour {
 
 	void OnGUI()
 	{
+		GUI.Label(new Rect(10,80,100, 30) , "Rock: " + (Rocks_Carried));
 		GUI.Box (new Rect (5, 5, Screen.width / 3/ ( 100 / Player_Health) , 20), "" + (int)Player_Health, Health_Bar_GUI);
 		GUI.Box (new Rect (5, 30, Screen.width / 3/ ( 100 / Player_Water) , 20), "" + (int)Player_Water, Water_Bar_GUI);
 		GUI.Box (new Rect (5, 60, Screen.width / 3/ ( 100 / Player_Food) , 20), "" + (int)Player_Food, Food_Bar_GUI);
