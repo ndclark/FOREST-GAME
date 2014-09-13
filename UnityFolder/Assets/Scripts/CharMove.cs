@@ -5,6 +5,7 @@ public class CharMove : MonoBehaviour {
 	public float vertSpeed = 0.0f;
 	public float horzSpeed = 0.0f;
 
+	public HudScript hudScript;
 	Animator anim;
 	// Use this for initialization
 	void Start () {
@@ -67,6 +68,18 @@ public class CharMove : MonoBehaviour {
 		rigidbody2D.velocity = targetDirection * Time.deltaTime;
 	}
 
+	void OnCollisionEnter2D(Collision2D other) 
+	{
+
+		if (other.gameObject.tag == "Water")
+		{
+			Debug.Log("hit");
+			hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
+			hudScript.Player_Water = hudScript.Player_Water + 60;
+
+			Destroy(other.gameObject);
+		}
+	} 
 
 
 }
