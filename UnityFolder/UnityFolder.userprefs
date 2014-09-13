@@ -1,37 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MapGenerator.cs">
-=======
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HudScript.cs">
-=======
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/HudScript.cs">
->>>>>>> FETCH_HEAD
     <Files>
-      <File FileName="Assets/Scripts/MapGenerator.cs" Line="6" Column="2" />
+      <File FileName="Assets/Scripts/MapGenerator.cs" Line="24" Column="67" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharMove.cs">
->>>>>>> origin/master
-    <Files>
-      <File FileName="Assets\Scripts\HudScript.cs" Line="13" Column="33" />
-      <File FileName="c:\Users\Chad\Desktop\VDC\FOREST-GAME\UnityFolder\Assets\Scripts\CharMove.cs" Line="1" Column="7" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-<<<<<<< HEAD
-=======
->>>>>>> FETCH_HEAD
->>>>>>> FETCH_HEAD
->>>>>>> origin/master
->>>>>>> FETCH_HEAD
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
