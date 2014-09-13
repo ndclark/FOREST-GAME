@@ -23,7 +23,7 @@ public class CharMove : MonoBehaviour {
 		Vector2 targetDirection = Vector2.zero;
 		if (Input.GetKey (KeyCode.A))
 		{
-			anim.SetBool("WalkL",false);
+			anim.SetBool("WalkB",false);
 			anim.SetBool("WalkR",false);
 			anim.SetBool("WalkF",false);
 			anim.SetBool("WalkL",true);
@@ -32,7 +32,7 @@ public class CharMove : MonoBehaviour {
 		else if (Input.GetKey (KeyCode.D))
 		{
 			anim.SetBool("WalkL",false);
-			anim.SetBool("WalkR",false);
+			anim.SetBool("WalkB",false);
 			anim.SetBool("WalkF",false);
 			anim.SetBool("WalkR",true);
 			targetDirection += Vector2.right*horzSpeed;
@@ -42,13 +42,22 @@ public class CharMove : MonoBehaviour {
 			anim.SetBool("WalkL",false);
 			anim.SetBool("WalkR",false);
 			anim.SetBool("WalkF",false);
-			anim.SetBool("WalkF",true);
+			anim.SetBool("WalkB",true);
 			targetDirection += Vector2.up *vertSpeed;
 		}
 		else if (Input.GetKey (KeyCode.S))
+		{
+
+			anim.SetBool("WalkL",false);
+			anim.SetBool("WalkR",false);
+			anim.SetBool("WalkB",false);
+			anim.SetBool("WalkF",true);
 			targetDirection += -Vector2.up * vertSpeed;
+
+		}
 		else
 		{
+			anim.SetBool("WalkB",false);
 			anim.SetBool("WalkL",false);
 			anim.SetBool("WalkR",false);
 			anim.SetBool("WalkF",false);
