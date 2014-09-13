@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 3be05a2d607b84c968710d8c5764a4de
+guid: ca74053a217d94e608b04c89bd2d79d1
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GJ1_CharacterSideStill_Left_1
+    21300000: GJ1_1&5_CharacterSideStill_Left
+    21300002: GJ1_1&5_CharacterSideStill_Left 1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +27,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
