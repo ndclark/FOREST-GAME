@@ -2,11 +2,10 @@
 using System.Collections;
 
 public class PlayerInteractions : MonoBehaviour {
-
-	public delegate void DrinkAction();
-	public static event DrinkAction OnDrink;
-	public delegate void EatAction();
-	public static event EatAction OnEat;
+	
+	public HudScript hudScript;
+	public float drinkRate;
+	public float eatAmount;
 
 	// Use this for initialization
 	void Start () {
@@ -18,25 +17,37 @@ public class PlayerInteractions : MonoBehaviour {
 		
 	}
 
-	void OnCollisionStay2D (Collision2D col) 
+	void OnCollisionEnter2D(Collision2D other) 
+	{
+		
+		if (other.gameObject.tag == "Food")
+		{
+			Debug.Log("Eating");
+			hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
+			hudScript.Player_Food = hudScript.Player_Food + eatAmount;
+			Destroy (other.gameObject);
+		}
+		
+		if (other.gameObject.tag == "Rock")
+		{
+			Debug.Log("PickedUpRock");
+			hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
+			hudScript.Rocks_Carried += 1;
+			Destroy (other.gameObject);
+		}
+	} 
+
+	void OnCollisionStay2D(Collision2D other)
 	{
 
-		if(col.gameObject.tag.Contains("Drinkable"))
+		if (other.gameObject.tag == "Water")
 		{
-			if(OnDrink!=null)
-			{
-				OnDrink();
-			}
-		}
-
-		if(col.gameObject.tag.Contains("Eatable"))
-		{
-			if(OnEat!=null)
-			{
-				OnEat();
-			}
+			Debug.Log("Drinking");
+			hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
+			hudScript.Player_Water = hudScript.Player_Water + drinkRate;
 		}
 
 	}
+
 
 }

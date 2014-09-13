@@ -7,9 +7,11 @@ public class HudScript : MonoBehaviour {
 	public float Player_Health = 100f;
 	public float Player_Water = 100f;
 	public float Player_Food = 100f;
+	public float Rocks_Carried = 0;
 
 	public float Health_Fall;
 	public float Water_Fall;
+	public float Food_Fall;
 	public GUIStyle Health_Bar_GUI;
 	public GUIStyle Water_Bar_GUI;
 	public GUIStyle Food_Bar_GUI;
@@ -18,34 +20,29 @@ public class HudScript : MonoBehaviour {
 	void Update () 
 	{
 		Player_Water = Player_Water - Water_Fall;
-		Player_Food = Player_Food - Water_Fall;
+		Player_Food = Player_Food - Food_Fall;
+
+		if (Player_Water > 100) 
+			Player_Water = 100;
+
+		if (Player_Food > 100) 
+			Player_Food = 100;
 
 		if (Player_Water <= 0)
 		{
 			Player_Water = 0;
-			if (Player_Food <= 0)
-			Player_Health = Player_Health - Health_Fall * 1.2f;
-			else
-				Player_Health = Player_Health - Health_Fall;
+			Player_Health = Player_Health - Health_Fall;
 		}
-		else if (Player_Water > 100)
-			Player_Water = 100;
-
 
 		if (Player_Food <= 0)
 		{
 			Player_Food = 0;
 			if(Player_Water <= 0)
-			Player_Health = Player_Health - Health_Fall * 1.2f;
-			else
-				Player_Health = Player_Health - Health_Fall;
+			Player_Health = Player_Health - Health_Fall;
 		}
 
 		if (Player_Health <= 0)
 			Player_Health =0;
-
-		else if (Player_Health > 100)
-			Player_Health = 100;
 	
 	}
 
