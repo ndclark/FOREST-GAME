@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CharMove.cs" />
      <Compile Include="Assets\Scripts\HudScript.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\MapGenerator.cs" />
      <Compile Include="Assets\Scripts\marioControllerScript.cs" />
   </ItemGroup>

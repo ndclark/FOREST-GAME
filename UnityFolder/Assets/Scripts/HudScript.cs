@@ -4,9 +4,9 @@ using System.Collections;
 public class HudScript : MonoBehaviour {
 
 	// Use this for initialization
-	 float Player_Health = 100f;
-	 float Player_Water = 100f;
-	float Player_Food = 100f;
+	public float Player_Health = 100f;
+	public float Player_Water = 100f;
+	public float Player_Food = 100f;
 
 	public float Health_Fall;
 	public float Water_Fall;
