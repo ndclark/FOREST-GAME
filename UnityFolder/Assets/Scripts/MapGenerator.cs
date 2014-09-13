@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MapGenerator : MonoBehaviour
 {
-	public GameObject tree1, tree2, foodTree, bush1, bush2, foodBush;
+	public GameObject boundryTree, tree1, tree2, foodTree, bush1, bush2, foodBush;
 	public int boundryWide, boundryHigh;
 	
 	// Use this for initialization
