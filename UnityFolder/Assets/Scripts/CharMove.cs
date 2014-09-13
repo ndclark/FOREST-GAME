@@ -15,8 +15,7 @@ public class CharMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKey (KeyCode.A))
-			anim.SetBool("WalkL",true);
+
 	}
 
 	void FixedUpdate () 
