@@ -42,6 +42,17 @@ public class PlayerInteractions : MonoBehaviour {
 			}
 
 		}
+
+		if (other.gameObject.tag == "Stick")
+		{
+			Debug.Log("PickedUpStick");
+			if(hudScript.Stick_Carried == 0)
+			{
+				hudScript.Stick_Carried = 1;
+				//visual effect of carrying stick?
+				Destroy (other.gameObject);
+			}
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D other) 
@@ -51,15 +62,6 @@ public class PlayerInteractions : MonoBehaviour {
 		{
 			Debug.Log("Eating");
 			hudScript.Player_Food = hudScript.Player_Food + eatAmount;
-			Destroy (other.gameObject);
-		}
-
-		if (other.gameObject.tag == "Stick")
-		{
-			Debug.Log("PickedUpStick");
-			//hudScript.Stick_Carried = 1;
-			//visual effect of carrying stick?
-			//
 			Destroy (other.gameObject);
 		}
 

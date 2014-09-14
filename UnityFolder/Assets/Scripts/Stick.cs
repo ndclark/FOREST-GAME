@@ -5,11 +5,13 @@ public class Stick : MonoBehaviour {
 
 	public int NumSticks;
 	public GameObject player;
+	public HudScript hudScript;
 	public bool onFire;
+	public Animator anim;
 
 	// Use this for initialization
 	void Start () {
-	
+		NumSticks = 1;
 	}
 
 	void Awake () 
@@ -17,12 +19,14 @@ public class Stick : MonoBehaviour {
 		NumSticks = 1;
 		onFire = false;
 		player = GameObject.FindGameObjectWithTag ("Player");
+		hudScript = GameObject.Find ("Main Camera").GetComponent<HudScript> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (NumSticks == 0)
 			Destroy (this.gameObject);
+
 		//animation depending on numsticks/fire
 
 	}
@@ -34,16 +38,16 @@ public class Stick : MonoBehaviour {
 		{
 			if (Vector3.Distance (transform.position, player.transform.position) <= 2) 
 			{
-				if (player.HudScript.Stick_Carried == 1)
+				if (hudScript.Stick_Carried == 1)
 				{
 					//place stick
-					player.HudScript.Stick_Carried = 0;
+					hudScript.Stick_Carried = 0;
 					NumSticks ++;
 				}
-				if (player.HudScript.Stick_Carried == 2)
+				if (hudScript.Stick_Carried == 2)
 				{
 					//place flaming stick
-					player.HudScript.Stick_Carried = 0;
+					hudScript.Stick_Carried = 0;
 					NumSticks ++;
 					onFire = true;
 				}
@@ -54,16 +58,17 @@ public class Stick : MonoBehaviour {
 		{
 			if (Vector3.Distance (transform.position, player.transform.position) <= 2) 
 			{
-				if (player.HudScript.Stick_Carried == 1 && onFire)
+				if (hudScript.Stick_Carried == 1 && onFire)
 				{
 					//light stick
-					player.HudScript.Stick_Carried = 2;
+					hudScript.Stick_Carried = 2;
 				}
 
-				if (player.HudScript.Stick_Carried == 0)
+				if (hudScript.Stick_Carried == 0)
 				{
 					//take stick
-					player.HudScript.Stick_Carried = 1;
+					hudScript.Stick_Carried = 1;
+					if (onFire) hudScript.Stick_Carried = 2;
 					NumSticks --;
 				}
 			}
