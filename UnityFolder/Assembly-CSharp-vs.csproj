@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\MapGenerator.cs" />
      <Compile Include="Assets\Scripts\PlayerInteractions.cs" />
      <Compile Include="Assets\Scripts\Rock.cs" />
+     <Compile Include="Assets\Scripts\StartScreenScript.cs" />
      <Compile Include="Assets\Scripts\Tree.cs" />
      <Compile Include="Assets\Scripts\marioControllerScript.cs" />
   </ItemGroup>

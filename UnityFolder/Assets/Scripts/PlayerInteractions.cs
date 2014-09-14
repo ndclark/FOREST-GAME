@@ -27,14 +27,13 @@ public class PlayerInteractions : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.tag == "Rock")
-		{	
-			
-			if(hudScript.Rocks_Carried == 0)
+		{
+			if (hudScript.Rocks_Carried == 0)
 			{
-				Debug.Log("PickedUpRock");
 				hudScript.Rocks_Carried = 1;
 				Destroy (other.gameObject);
 			}
+
 		}
 	}
 
@@ -55,6 +54,17 @@ public class PlayerInteractions : MonoBehaviour {
 			//visual effect of carrying stick?
 			//
 			Destroy (other.gameObject);
+		}
+
+		if (other.gameObject.tag == "Rock")
+		{	
+			
+			if(hudScript.Rocks_Carried == 0)
+			{
+				Debug.Log("PickedUpRock");
+				hudScript.Rocks_Carried = 1;
+
+			}
 		}
 
 	} 
