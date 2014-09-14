@@ -36,7 +36,6 @@ public class Boar_AI : MonoBehaviour
 					Instantiate(boardBaby, player.transform.position, Quaternion.identity);
 					t = 0f;
 				}
-				
 			}
 			else
 			{
