@@ -6,6 +6,7 @@ public class Tree : MonoBehaviour {
 	public float vertOffset, leftOffset, rightOffset, transparentAlpha;
 	BoxCollider2D boxCollider;
 	float boxColliderTop;
+	//Players position
 	float playerY;
 	float playerX;
 	float playerWidth;
@@ -32,7 +33,6 @@ public class Tree : MonoBehaviour {
 		bool isAbove = playerY + vertOffset > boxColliderTop; //Vertical check 
 		bool isInLeftBound = playerX + playerWidth + leftOffset > gameObject.transform.position.x;
 		bool isInRightBound = playerX + rightOffset < transform.position.x + treeWidth;
-		Debug.Log("TreeY: " + boxColliderTop + "\tPlayerY: " + playerY);
 		if(isAbove && isInLeftBound && isInRightBound)
 		{
 			gameObject.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,transparentAlpha);
