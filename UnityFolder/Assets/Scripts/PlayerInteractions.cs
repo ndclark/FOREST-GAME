@@ -32,7 +32,6 @@ public class PlayerInteractions : MonoBehaviour {
 		if (other.gameObject.tag == "Food")
 		{
 			Debug.Log("Eating");
-			hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
 			hudScript.Player_Food = hudScript.Player_Food + eatAmount;
 			Destroy (other.gameObject);
 		}
@@ -40,6 +39,7 @@ public class PlayerInteractions : MonoBehaviour {
 		if (other.gameObject.tag == "Rock")
 		{
 			Debug.Log("PickedUpRock");
+<<<<<<< HEAD
 			hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
 
 			if(hudScript.Rocks_Carried == 0)
@@ -47,7 +47,21 @@ public class PlayerInteractions : MonoBehaviour {
 				hudScript.Rocks_Carried = 1;
 				Destroy (other.gameObject);
 			}
+=======
+			hudScript.Rocks_Carried += 1;
+			Destroy (other.gameObject);
+>>>>>>> origin/master
 		}
+
+		if (other.gameObject.tag == "Stick")
+		{
+			Debug.Log("PickedUpStick");
+			hudScript.Stick_Carried = 1;
+			//visual effect of carrying stick?
+			//
+			Destroy (other.gameObject);
+		}
+
 	} 
 
 	void OnCollisionStay2D(Collision2D other)
@@ -56,7 +70,6 @@ public class PlayerInteractions : MonoBehaviour {
 		if (other.gameObject.tag == "Water")
 		{
 			Debug.Log("Drinking");
-			hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
 			hudScript.Player_Water = hudScript.Player_Water + drinkRate;
 		}
 
