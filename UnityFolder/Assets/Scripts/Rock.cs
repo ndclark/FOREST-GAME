@@ -36,14 +36,14 @@ public class Rock : MonoBehaviour {
 			transform.Translate  (Vector3.right * throwSpeed * Time.deltaTime);
 	}
 
-	void OnTriggerEnter2D(Collider2D c)
+	/*void OnTriggerEnter2D(Collider2D c)
 	{
 		if(c.gameObject.tag == "Boar")
 		{
 			c.gameObject.GetComponent<Boar_AI>().takeDamage();
 			Destroy(gameObject);
 		}
-	}
+	}*/
 
 
 }
