@@ -8,6 +8,7 @@ public class HudScript : MonoBehaviour {
 	public float Player_Water = 100f;
 	public float Player_Food = 100f;
 	public int Rocks_Carried = 0;
+	public int Stick_Carried = 0;
 
 	public float Health_Fall;
 	public float Water_Fall;
