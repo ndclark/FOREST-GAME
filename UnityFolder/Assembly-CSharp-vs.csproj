@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\ResumeScript.cs" />
      <Compile Include="Assets\Scripts\Rock.cs" />
      <Compile Include="Assets\Scripts\StartScreenScript.cs" />
+     <Compile Include="Assets\Scripts\Stick.cs" />
      <Compile Include="Assets\Scripts\Tree.cs" />
      <Compile Include="Assets\Scripts\marioControllerScript.cs" />
   </ItemGroup>
