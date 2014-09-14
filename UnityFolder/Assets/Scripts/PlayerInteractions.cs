@@ -6,12 +6,15 @@ public class PlayerInteractions : MonoBehaviour {
 	public HudScript hudScript;
 	public float drinkRate;
 	public float eatAmount;
+	bool paused = false;
 
 	public GameObject rockObject;
 	// Use this for initialization
 	void Start () 
 	{
 		hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
+
+
 	}
 	
 	// Update is called once per frame
@@ -22,6 +25,10 @@ public class PlayerInteractions : MonoBehaviour {
 			Instantiate(rockObject, transform.position +new Vector3(0,0,0),Quaternion.Euler(0,0,0));
 			hudScript.Rocks_Carried = 0;
 		}
+
+
+		if(Input.GetKeyDown(KeyCode.Escape))
+			paused = togglePause();
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -80,5 +87,30 @@ public class PlayerInteractions : MonoBehaviour {
 
 	}
 
+	void OnGUI ()
+	{
+		if(paused)
+		{
+			GUILayout.Label("Game is paused!");
+			if(GUILayout.Button("Click me to unpause"))
+				paused = togglePause();
+		}
+	}
 
+	bool togglePause()
+	{
+		if(Time.timeScale == 0f)
+		{
+			Time.timeScale = 1f;
+			return(false);
+		}
+		else
+		{
+			Time.timeScale = 0f;
+			return(true);
+		}
+	}
 }
+
+
+
