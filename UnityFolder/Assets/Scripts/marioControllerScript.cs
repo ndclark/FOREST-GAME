@@ -22,6 +22,8 @@ public class marioControllerScript : MonoBehaviour
 	public LayerMask whatIsGround;
 	public float jumpForce = 700;
 	public Transform groundCheck;
+
+
 	void Awake ()
 	{
 

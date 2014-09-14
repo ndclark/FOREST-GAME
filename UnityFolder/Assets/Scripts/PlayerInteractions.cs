@@ -9,13 +9,15 @@ public class PlayerInteractions : MonoBehaviour {
 
 	public GameObject rockObject;
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+
 		hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
 		if( Input.GetKeyDown (KeyCode.Space) && hudScript.Rocks_Carried == 1)
 		{
@@ -39,8 +41,12 @@ public class PlayerInteractions : MonoBehaviour {
 		{
 			Debug.Log("PickedUpRock");
 			hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
-			hudScript.Rocks_Carried += 1;
-			Destroy (other.gameObject);
+
+			if(hudScript.Rocks_Carried == 0)
+			{
+				hudScript.Rocks_Carried = 1;
+				Destroy (other.gameObject);
+			}
 		}
 	} 
 

@@ -1,12 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Rock.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerInteractions.cs">
     <Files>
-      <File FileName="Assets\Scripts\Rock.cs" Line="9" Column="38" />
-      <File FileName="Assets\Scripts\PlayerInteractions.cs" Line="16" Column="3" />
-      <File FileName="Assets\Scripts\marioControllerScript.cs" Line="85" Column="93" />
-      <File FileName="Assets\Scripts\CharMove.cs" Line="28" Column="32" />
-      <File FileName="..\..\..\Player_Shoot.cs" Line="27" Column="38" />
+      <File FileName="Assets\Scripts\Rock.cs" Line="28" Column="51" />
+      <File FileName="Assets\Scripts\PlayerInteractions.cs" Line="44" Column="4" />
+      <File FileName="Assets\Scripts\marioControllerScript.cs" Line="106" Column="2" />
+      <File FileName="Assets\Scripts\CharMove.cs" Line="83" Column="21" />
+      <File FileName="..\..\..\Player_Shoot.cs" Line="31" Column="2" />
+      <File FileName="..\..\..\PlayerInteractions2.cs" Line="22" Column="64" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
