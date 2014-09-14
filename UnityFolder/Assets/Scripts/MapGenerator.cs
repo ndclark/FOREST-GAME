@@ -5,6 +5,7 @@ public class MapGenerator : MonoBehaviour
 {
 	public GameObject boundryTree, tree1, tree2, foodTree, bush1, bush2, foodBush;
 	public int boundryWide, boundryHigh;
+	public float percentChanceTree, maxTree;
 	
 	// Use this for initialization
 	void Start ()
@@ -17,6 +18,7 @@ public class MapGenerator : MonoBehaviour
 		boundry ();
 	}
 	
+	//Generates the boundry 
 	void boundry()
 	{
 		
@@ -40,6 +42,14 @@ public class MapGenerator : MonoBehaviour
 			//Right Tree
 			Instantiate(tree1,new Vector3((boundryHigh-1)*imgWidth,y*imgHeight,0),Quaternion.identity);
 		}
+		
+		
+	}
+	
+	//Dis makes da trees
+	void trees()
+	{
+		
 	}
 	
 	// Update is called once per frame

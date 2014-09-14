@@ -3,17 +3,20 @@ using System.Collections;
 
 public class Boar_AI : MonoBehaviour
 {
-	public GameObject player;
+	public GameObject player = null;
 	public float attackDistance;
 	public float speed;
 	public float minDirectionChangeTime, senseDistance;
 	private float boarWidth, boarHeight;
 	private bool isMovingX = false;
 	private float t;
+	public GameObject boardBaby;
 	
 	void Awake()
 	{
 		t = -minDirectionChangeTime;
+		if(player == null)
+			player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -23,33 +26,42 @@ public class Boar_AI : MonoBehaviour
 		float curDistance = neededMov.magnitude;
 		t += Time.deltaTime;
 		
-		if(neededMov.magnitude < senseDistance && curDistance <= attackDistance)
+		if(neededMov.magnitude < senseDistance)
 		{
-			//ATTACK TODO
-		}
-		else
-		{
-			if(t > minDirectionChangeTime)
+			if(curDistance <= attackDistance)
 			{
-				t = 0f;
-				isMovingX = Mathf.Abs(neededMov.x) > Mathf.Abs(neededMov.y);
-			}
-			
-			if(isMovingX)
-			{
-				//move along X
-				if(neededMov.x < 0)
-					transform.Translate(-speed * Time.deltaTime, 0f, 0f);
-				else
-					transform.Translate(speed * Time.deltaTime, 0f, 0f);
+				//ATTACK TODO
+				if( t > minDirectionChangeTime)
+				{
+					Instantiate(boardBaby, player.transform.position, Quaternion.identity);
+					t = 0f;
+				}
+				
 			}
 			else
 			{
-				//Move along Y
-				if(neededMov.y < 0)
-					transform.Translate(0f, -speed * Time.deltaTime, 0f);
+				if(t > minDirectionChangeTime)
+				{
+					t = 0f;
+					isMovingX = Mathf.Abs(neededMov.x) > Mathf.Abs(neededMov.y);
+				}
+				
+				if(isMovingX)
+				{
+					//move along X
+					if(neededMov.x < 0)
+						transform.Translate(-speed * Time.deltaTime, 0f, 0f);
+					else
+						transform.Translate(speed * Time.deltaTime, 0f, 0f);
+				}
 				else
-					transform.Translate(0f, speed * Time.deltaTime, 0f);
+				{
+					//Move along Y
+					if(neededMov.y < 0)
+						transform.Translate(0f, -speed * Time.deltaTime, 0f);
+					else
+						transform.Translate(0f, speed * Time.deltaTime, 0f);
+				}
 			}
 		}
 	}
