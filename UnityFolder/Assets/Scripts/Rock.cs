@@ -23,26 +23,27 @@ public class Rock : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-
-
-
 		if (directionL)
-		transform.Translate  (Vector3.left * throwSpeed);
+		transform.Translate  (Vector3.left * throwSpeed * Time.deltaTime);
 
-		if (directionU)
-			transform.Translate  (Vector3.up * throwSpeed);
+		else if (directionU)
+			transform.Translate  (Vector3.up * throwSpeed * Time.deltaTime);
 
-		if (directionD)
-			transform.Translate  (Vector3.down * throwSpeed);
+		else if (directionD)
+			transform.Translate  (Vector3.down * throwSpeed * Time.deltaTime);
 
-		if (directionR)
-			transform.Translate  (Vector3.right * throwSpeed);
-			
-
+		else if (directionR)
+			transform.Translate  (Vector3.right * throwSpeed * Time.deltaTime);
 	}
 
-	void SpawnRock()
+	void OnTriggerEnter2D(Collider2D c)
 	{
-
+		if(c.gameObject.tag == "Boar")
+		{
+			c.gameObject.GetComponent<Boar_AI>().takeDamage();
+			Destroy(gameObject);
+		}
 	}
+
+
 }

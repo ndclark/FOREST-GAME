@@ -7,11 +7,13 @@ public class Boar_AI : MonoBehaviour
 	public float attackDistance;
 	public float speed;
 	public float minDirectionChangeTime, senseDistance;
+	public float damageDone, deltaAttackTime;
 	private float boarWidth, boarHeight;
-	private bool isMovingX = false;
+	private bool isMovingX = false, firstAttack = true;
 	private float t;
-	public GameObject boardBaby;
+	private short health = 2;
 	Animator anim;
+	
 	
 	void Awake()
 	{
@@ -19,6 +21,20 @@ public class Boar_AI : MonoBehaviour
 		anim = GetComponent <Animator>();
 		if(player == null)
 			player = GameObject.FindGameObjectWithTag("Player");
+	}
+	
+	public void takeDamage()
+	{
+		gameObject.GetComponent<DamageEffect>().Init();
+		--health;
+		if(health <= 0)
+			die ();
+	}
+	
+	void die()
+	{
+		//TODO Spawn meat
+		Destroy(gameObject);
 	}
 	
 	// Update is called once per frame
@@ -32,11 +48,17 @@ public class Boar_AI : MonoBehaviour
 		{
 			if(curDistance <= attackDistance)
 			{
-				//ATTACK TODO
-				if( t > minDirectionChangeTime)
+				if(firstAttack == true)
 				{
-					Instantiate(boardBaby, player.transform.position, Quaternion.identity);
+					t=1000f;
+					firstAttack = false;
+				}
+				
+				if(t>deltaAttackTime)
+				{
 					t = 0f;
+					Camera.main.GetComponent<HudScript>().Player_Health-=damageDone;
+					player.GetComponent<DamageEffect>().Init ();
 				}
 			}
 			else
@@ -49,6 +71,7 @@ public class Boar_AI : MonoBehaviour
 				
 				if(isMovingX)
 				{
+					gameObject.GetComponent<BoxCollider2D>().size = new Vector2(2.3f,1.55f);
 					//move along X
 					if(neededMov.x < 0)
 					{
@@ -69,6 +92,7 @@ public class Boar_AI : MonoBehaviour
 				}
 				else
 				{
+					gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.22f,1.65f);
 					//Move along Y
 					if(neededMov.y < 0)
 					{
@@ -88,6 +112,15 @@ public class Boar_AI : MonoBehaviour
 					}
 				}
 			}
+		}
+	}
+	
+	public void OnTriggerEnter2D(Collider2D c)
+	{
+		if(c.gameObject.tag == "Rock")
+		{
+			takeDamage();
+			Destroy(c.gameObject);
 		}
 	}
 }
