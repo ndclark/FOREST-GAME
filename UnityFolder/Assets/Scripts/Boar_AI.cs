@@ -11,10 +11,12 @@ public class Boar_AI : MonoBehaviour
 	private bool isMovingX = false;
 	private float t;
 	public GameObject boardBaby;
+	Animator anim;
 	
 	void Awake()
 	{
 		t = -minDirectionChangeTime;
+		anim = GetComponent <Animator>();
 		if(player == null)
 			player = GameObject.FindGameObjectWithTag("Player");
 	}
@@ -49,17 +51,41 @@ public class Boar_AI : MonoBehaviour
 				{
 					//move along X
 					if(neededMov.x < 0)
+					{
 						transform.Translate(-speed * Time.deltaTime, 0f, 0f);
+						anim.SetBool("WalkL",true);
+						anim.SetBool("WalkR",false);
+						anim.SetBool("WalkF",false);
+						anim.SetBool("WalkB",false);
+					}
 					else
+					{
 						transform.Translate(speed * Time.deltaTime, 0f, 0f);
+						anim.SetBool("WalkL",false);
+						anim.SetBool("WalkR",true);
+						anim.SetBool("WalkF",false);
+						anim.SetBool("WalkB",false);
+					}
 				}
 				else
 				{
 					//Move along Y
 					if(neededMov.y < 0)
+					{
 						transform.Translate(0f, -speed * Time.deltaTime, 0f);
+						anim.SetBool("WalkL",false);
+						anim.SetBool("WalkR",false);
+						anim.SetBool("WalkF",true);
+						anim.SetBool("WalkB",false);
+					}
 					else
+					{
 						transform.Translate(0f, speed * Time.deltaTime, 0f);
+						anim.SetBool("WalkL",false);
+						anim.SetBool("WalkR",false);
+						anim.SetBool("WalkF",false);
+						anim.SetBool("WalkB",true);
+					}
 				}
 			}
 		}
