@@ -44,7 +44,10 @@ public class HudScript : MonoBehaviour {
 		}
 
 		if (Player_Health <= 0)
+		{
 			Player_Health =0;
+			Application.LoadLevel(2);
+		}
 	
 	}
 
