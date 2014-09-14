@@ -1,21 +1,9 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Tree.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Boar_AI.cs">
     <Files>
-      <File FileName="Assets/Scripts/MapGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Tree.cs" Line="7" Column="2" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Rock.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Rock.cs" Line="25" Column="51" />
-      <File FileName="Assets\Scripts\PlayerInteractions.cs" Line="51" Column="4" />
-      <File FileName="Assets\Scripts\marioControllerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CharMove.cs" Line="83" Column="21" />
-      <File FileName="..\..\..\Player_Shoot.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\PlayerInteractions2.cs" Line="1" Column="1" />
->>>>>>> FETCH_HEAD
+      <File FileName="Assets/Scripts/MapGenerator.cs" Line="52" Column="3" />
+      <File FileName="Assets/Scripts/Boar_AI.cs" Line="32" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

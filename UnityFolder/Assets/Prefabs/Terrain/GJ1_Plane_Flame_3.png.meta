@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: 377027fcf6c33465ca5c812073679a7d
+guid: fdd3c6f06ebd24ef4bef39f60998994c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GJ1_Tile_1
-    21300002: l;'.cvklm'cxzmn.cvxzkm;bcv
+    21300000: GJ1_Plane_Flame_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -27,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
