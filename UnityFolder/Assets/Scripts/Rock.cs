@@ -24,8 +24,8 @@ public class Rock : MonoBehaviour {
 		if (moveScript.backFace == true)
 			transform.Translate  (Vector3.up * throwSpeed);
 
-		if (moveScript.backFace == true)
-			transform.Translate  (Vector3.up * throwSpeed);
+		if (moveScript.frontFace == true)
+			transform.Translate  (Vector3.down * throwSpeed);
 
 		if (moveScript.rightFace == true)
 			transform.Translate  (Vector3.right * throwSpeed);

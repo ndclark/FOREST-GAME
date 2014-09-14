@@ -39,7 +39,7 @@ public class PlayerInteractions : MonoBehaviour {
 		if (other.gameObject.tag == "Rock")
 		{
 			Debug.Log("PickedUpRock");
-<<<<<<< HEAD
+
 			hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
 
 			if(hudScript.Rocks_Carried == 0)
@@ -47,16 +47,15 @@ public class PlayerInteractions : MonoBehaviour {
 				hudScript.Rocks_Carried = 1;
 				Destroy (other.gameObject);
 			}
-=======
-			hudScript.Rocks_Carried += 1;
-			Destroy (other.gameObject);
->>>>>>> origin/master
+
+
+
 		}
 
 		if (other.gameObject.tag == "Stick")
 		{
 			Debug.Log("PickedUpStick");
-			hudScript.Stick_Carried = 1;
+			//hudScript.Stick_Carried = 1;
 			//visual effect of carrying stick?
 			//
 			Destroy (other.gameObject);
