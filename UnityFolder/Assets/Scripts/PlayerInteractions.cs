@@ -11,18 +11,29 @@ public class PlayerInteractions : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		
+		hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-
-		hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
 		if( Input.GetKeyDown (KeyCode.Space) && hudScript.Rocks_Carried == 1)
 		{
 			Instantiate(rockObject, transform.position +new Vector3(0,0,0),Quaternion.Euler(0,0,0));
 			hudScript.Rocks_Carried = 0;
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "Rock")
+		{
+			if (hudScript.Rocks_Carried == 0)
+			{
+				hudScript.Rocks_Carried = 1;
+				Destroy (other.gameObject);
+			}
+
 		}
 	}
 
@@ -35,22 +46,6 @@ public class PlayerInteractions : MonoBehaviour {
 			hudScript.Player_Food = hudScript.Player_Food + eatAmount;
 			Destroy (other.gameObject);
 		}
-		
-		if (other.gameObject.tag == "Rock")
-		{
-			Debug.Log("PickedUpRock");
-
-			hudScript = GameObject.Find("Main Camera").GetComponent<HudScript>();
-
-			if(hudScript.Rocks_Carried == 0)
-			{
-				hudScript.Rocks_Carried = 1;
-				Destroy (other.gameObject);
-			}
-
-
-
-		}
 
 		if (other.gameObject.tag == "Stick")
 		{
@@ -59,6 +54,17 @@ public class PlayerInteractions : MonoBehaviour {
 			//visual effect of carrying stick?
 			//
 			Destroy (other.gameObject);
+		}
+
+		if (other.gameObject.tag == "Rock")
+		{	
+			
+			if(hudScript.Rocks_Carried == 0)
+			{
+				Debug.Log("PickedUpRock");
+				hudScript.Rocks_Carried = 1;
+
+			}
 		}
 
 	} 

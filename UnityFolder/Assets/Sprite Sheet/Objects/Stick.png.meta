@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: cf3810e605c7d4b4d8682cf8c1a351ce
+guid: ad95b7eb9c30e485998e57564bd70fb7
 TextureImporter:
   fileIDToRecycleName:
-    21300000: roll
+    21300000: Stick
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
